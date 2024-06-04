@@ -19,46 +19,45 @@ def cropped(detections,image):
 
 
 def main():
-
+    #Directorio donde esta el video a analizar
     cap = cv2.VideoCapture('videos/video.mp4')
     # Verificar si el video se abrió correctamente
     if not cap.isOpened():
        print("Error: No se puede abrir el archivo de video")
        exit()
 
+    #Para inicializar el conteo de frame
     frame_number = 0
 
-    
+    #Permite sacar informacion del video analizado para usarlo en el de salida
     frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = cap.get(cv2.CAP_PROP_FPS)
-
+    #Configuracion de formato del video de salida
     output_video_path = 'videooutput_video.mp4'  # Ruta del archivo de salida
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codificador para el archivo de salida
     out = cv2.VideoWriter('videos/output_video.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
 
 
     while cap.isOpened():
-        
+        #Lee el video frame a frame
         ret,frame = cap.read()
+        #Suma 1 al conteo de frame
         frame_number +=1 
-
+        #Para salir del bucle while
         if not ret:
            break 
 
         #modelo para detectar el medio de transporte
         model_t = YOLO('models\yolov10n.pt')
-
-        print(frame_number)
+        #Imprime el numero de frame que se está analizando
+        print("Numero de frame: ",frame_number)
 
         #se pasa la imagen por el modelo que detecta el medio de transporte
         results_t = model_t(frame)[0]
-
         #se pasan los resultados a la libreria supervison
         detections_t = sv.Detections.from_ultralytics(results_t)
 
-        # dict maping class_id to class_name
-        class_name = model_t.model.names
         # class_ids of interest - car, motorcycle, bus and truck
         class_id = [2, 3, 5, 7]
 
@@ -143,6 +142,7 @@ def main():
             frame = cv2.putText(annotated_image_p, text, position, font, font_scale, font_color, font_thickness)
             print(text)
 
+            #Guarda el frame para construir el video
             out.write(frame)
             
             #Muestra el frame mientra se guardan para el video
