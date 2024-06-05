@@ -53,11 +53,11 @@
 </p>
 
 <p align="center">
-<img src="images/matricula.png"  height=250>
+<img src="images/matricula.png"  height=150>
 </p>
 
 <p align="center">
-<img src="images/matricula_gris.png"  height=250>
+<img src="images/matricula_gris.png"  height=150>
 </p>
 
 
@@ -65,12 +65,17 @@
 
 ## Estructura de Archivos
 
-**models**
-**videos**
-**detector.ipynb**
-**detector.py**
-**entrenamiento_colab.ipynb**
-**requirements.txt**
+**models** <br>
+
+**videos** <br>
+
+**detector.ipynb** <br>
+
+**detector.py** <br>
+
+**entrenamiento_colab.ipynb** <br>
+
+**requirements.txt** <br>
 
 
 
