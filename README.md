@@ -30,22 +30,22 @@
 # Código
 
 <p align="center">
-<img src="images/Auto.jpg"  height=500>
+<img src="images/Auto.jpg"  height=400>
 </p>
 
 <p align="center">
-<img src="images/det_auto.png"  height=500>
+<img src="images/det_auto.png"  height=400>
 </p>
 
 <p align="center">
-<img src="images/rec_auto.png"  height=500>
+<img src="images/rec_auto.png"  height=300>
 </p>
 
 
 [dataset matriculas](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
 
 <p align="center">
-<img src="images/det_matricula.png"  height=500>
+<img src="images/det_matricula.png"  height=300>
 </p>
 
 <p align="center">
@@ -80,6 +80,7 @@
 
 - El dataset de transporte
 - El dataset de placa
+- tracker
 
 
 
