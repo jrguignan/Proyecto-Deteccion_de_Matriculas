@@ -6,6 +6,15 @@ from supervision.draw.color import ColorPalette
 from supervision.detection.annotate import BoxAnnotator
 import numpy as np
 
+
+''' 
+Entrada: archivo supervision,imagen a recortar
+
+Funcion: Recorta la imagen que se le pase usando los parametros del box de deteccion, en este 
+caso se usa la salida de la deteccion de supervision -> sv.Detections.from_ultralytics()
+
+Salida: Imagen recortada 
+'''
 # funcion que recorta imagenes
 def cropped(detections,image):
     bounding_box = detections.xyxy
