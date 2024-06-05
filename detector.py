@@ -1,4 +1,4 @@
-from ultralytics import YOLO
+from ultralytics import YOLOv10
 import pytesseract
 import cv2
 import supervision as sv
@@ -58,7 +58,7 @@ def main():
            break 
 
         #modelo para detectar el medio de transporte
-        model_t = YOLO('models\yolov10n.pt')
+        model_t = YOLOv10('models\yolov10n.pt')
         #Imprime el numero de frame que se está analizando
         print("Numero de frame: ",frame_number)
 
@@ -83,7 +83,7 @@ def main():
             cropped_image_t = cropped(detections_t, frame)
             
             #modelo para detectar el medio de matricula
-            model_p = YOLO('models\placa.pt')
+            model_p = YOLOv10('models\placa.pt')
             #se pasa la imagen por el modelo que detecta matriculas
             #Se hace con la imagen recortada para mejorar la deteccion
             results_p = model_p(cropped_image_t, agnostic_nms = True)[0]

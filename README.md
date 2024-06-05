@@ -66,9 +66,11 @@ pip install .
 
 # Breve Explicación del Código
 
-Cabe destacar que el codigo realiza el proceso frame a frame, por lo que se decidió dejar el archivo [detector.ipynb](https://github.com/jrguignan/Proyecto-Deteccion_de_Matriculas/blob/main/detector.ipynb). La suma del analisis de estos frames generará el video de salida.
+Cabe destacar que el codigo realiza el proceso frame a frame, por lo que se decidió dejar el archivo [detector.ipynb](https://github.com/jrguignan/Proyecto-Deteccion_de_Matriculas/blob/main/detector.ipynb), tambien para facilitar en el entendimiento del código del detector. 
 
-Se pasa el frame a analisar.
+La suma del analisis de estos frames generará el video de salida.
+
+Se pasa el frame a analizar.
 
 <p align="center">
 <img src="images/auto.jpg"  height=300>
@@ -111,7 +113,9 @@ Se imprime la deteccion del OCR en el frame, que en conjunto con las demas etiqu
 <img src="images/det_doble.png"  height=300>
 </p>
 
-La iteración de este proceso genera el análisis de un video o tambien podría ser el análisis  una camara en tiempo real.
+La iteración de este proceso genera el análisis de un video o también podría ser el análisis  una cámara en tiempo real.
+
+<br>[Volver al Índice](#Índice)
 
 # Estructura de Archivos
 
