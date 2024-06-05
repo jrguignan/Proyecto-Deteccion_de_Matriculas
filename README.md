@@ -30,11 +30,11 @@
 # Código
 
 <p align="center">
-<img src="images/Auto.jpg"  height=400>
+<img src="images/auto.jpg"  height=300>
 </p>
 
 <p align="center">
-<img src="images/det_auto.png"  height=400>
+<img src="images/det_auto.png"  height=300>
 </p>
 
 <p align="center">
@@ -49,15 +49,15 @@
 </p>
 
 <p align="center">
-<img src="images/det_doble.png"  height=500>
+<img src="images/det_doble.png"  height=300>
 </p>
 
 <p align="center">
-<img src="images/matricula.png"  height=500>
+<img src="images/matricula.png"  height=250>
 </p>
 
 <p align="center">
-<img src="images/matricula_gris.png"  height=500>
+<img src="images/matricula_gris.png"  height=250>
 </p>
 
 
