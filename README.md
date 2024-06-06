@@ -56,7 +56,7 @@ pip install .
 
 
 ### [Dataset usado para las matrículas](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
-### [dataset matriculas](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
+
 
 
 ## [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
@@ -76,7 +76,7 @@ Se pasa el frame a analizar.
 <img src="images/auto.jpg"  height=300>
 </p>
 
-Se corre el datasets de coco en YOLO, para detectar si hay un auto, motocicleta, bus o camión y se colocan las etiquetas de la detección en el frame.
+Se corre modelo entrenado con el dataset de coco en YOLO, para detectar si hay un auto, motocicleta, bus o camión y se colocan las etiquetas de la detección en el frame.
 
 <p align="center">
 <img src="images/det_auto.png"  height=300>
@@ -119,29 +119,28 @@ La iteración de este proceso genera el análisis de un video o también podría
 
 # Estructura de Archivos
 
-**carpeta models** -> Contiene los modelos entrenados en archivos .pt. Estos archivos son los valores de los peso y los bias de la red neuronal entrenada. Uno es el entreando por defecto con el dataset COCO y el otro es un dataset entrenado con un dataset sacado de roboflow  <br>
+**carpeta models** -> Contiene los modelos entrenados en archivos .pt. Estos archivos son los valores de los peso y los bias de la red neuronal entrenada. Uno es el entreando por defecto con el dataset COCO y el otro es un modelo entrenado con un dataset sacado de RoboFlow  <br>
 
 **carpeta videos** -> Contiene un video que se utilizó de prueba y el video de salida luego de la detección de la matrícula.<br>
 
-**detector.ipynb** -> Archivo de jupyter que contiene el código para correr sobre un frame. Muestra paso a paso lo que hace el código. <br>
+**detector.ipynb** -> Contiene el código para correr sobre un frame. Muestra paso a paso lo que hace el código. <br>
 
-**detector.py** -> Archivo que contiene el código para correr sobre un video. <br>
+**detector.py** -> Contiene el código para correr sobre un video. <br>
 
-**entrenamiento_colab.ipynb** -> Archivo de jupyter notebook que contiene el entrenamiento del dataset para detectar la matrículas a 40 épocas, en la plataforma de Google Colab.<br>
+**entrenamiento_colab.ipynb** -> Contiene el entrenamiento del dataset para detectar la matrículas a 40 épocas, en la plataforma de Google Colab.<br>
 
-**requirements.txt** -> Archivo de texto que contiene las librerías utilizadas con sus versiones, en el caso de ultralytics(YOLO10), se instaló directo del reposiorio de GitHub porque ha la fecha de realización de este proyecto, tenía pocos días de su salida. <br>
-
-
+**requirements.txt** -> Archivo de texto que contiene las librerías utilizadas con sus versiones, en el caso de ultralytics (YOLO10), se instaló directo del reposiorio de GitHub porque ha la fecha de realización de este proyecto, tenía pocos días de su salida. <br>
 
 
 <br>[Volver al Índice](#Índice)
 
 # Recomendaciones
 
-- El dataset de transporte
-- El dataset de placa
-- tracker
-- OCR
+- Es más apropiado usar modelos entrenados con datasets de imágenes prácticas, que se aproximen a las que se usarán en la detección. 
+
+- Al analizar videos largos y continuos con varios vehiculos es necesario utilizar un tracker en el código.
+
+- Se pueder mejorar el tratamiento que se le hace a la imagen de la placa, esto haría mas fiable la lectura que hace tesseract-OCR.
 
 
 <br>[Volver al Índice](#Índice)
