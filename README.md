@@ -7,7 +7,7 @@ En construccion 🚧
 
 * [Objetivo](#Objetivo)
 * [Tegnologías Utilizadas](#Tegnologías-Utilizadas)
-  * [YOLO10](#YOLO10)
+  * [YOLOv10](#YOLO10)
   * [OpenCV](#OpenCV)
   * [RoboFlow](#RoboFlow)
   * [Tesseract OCR](#Tesseract-OCR)
@@ -27,12 +27,14 @@ Cabe aclarar que cuando se hacer referencia a placa, patente o matrícula se est
 
 # Tegnologías Utilizadas
 
-## [Yolo10](https://docs.ultralytics.com/models/yolov10/)
+## [Yolov10](https://docs.ultralytics.com/models/yolov10/)
 
 YOLO (You Only Look Once) de Ultralytics es una arquitectura de red neuronal profunda diseñada para la detección de objetos en tiempo real. Utiliza un enfoque de regresión único que predice directamente las clases y las ubicaciones de los objetos en una imagen en una sola pasada, lo que lo hace extremadamente rápido y eficiente. Se usa en diversas aplicaciones como vigilancia, conducción autónoma, análisis de videos y cualquier tarea que requiera identificar y localizar objetos específicos dentro de imágenes o secuencias de video de manera rápida y precisa.
 
 
 ### Instalación YOLO10
+En el momento de la realización del proyecto, recién había salido YOLOv10, por lo que tuve que instalarlo desde el repositorio de GitHub.
+
 En poco tiempo se intalará de manera automática al instalar la librería ultralytics.
 
 En mi caso tuve que instalarlo de la siguente manera:
@@ -55,9 +57,9 @@ OpenCV (Open Source Computer Vision Library) es una biblioteca de software de c�
 
 Es una plataforma integral diseñada para facilitar el desarrollo de aplicaciones de visión por computadora. Proporciona herramientas para gestionar y mejorar datasets de imágenes, incluyendo la anotación, el aumento de datos y la exportación a formatos compatibles con diversas arquitecturas de modelos de aprendizaje profundo, como YOLO, TensorFlow, y PyTorch. Roboflow simplifica el proceso de preparar los datos para entrenar modelos de reconocimiento de objetos, clasificación de imágenes y segmentación, permitiendo a los desarrolladores centrarse en el diseño y optimización de sus modelos en lugar de en las tareas repetitivas y técnicas asociadas con la gestión de datos.
 
-### [Dataset matrículas directo para descargar](https://drive.google.com/file/d/14F8udJ3bpF8evlwJESyYtV7JOL2QB51C/view?usp=sharing)
+#### [Dataset matrículas directo para descargar](https://drive.google.com/file/d/14F8udJ3bpF8evlwJESyYtV7JOL2QB51C/view?usp=sharing)
 
-### [Dataset matrículas - Universe RoboFlow](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
+#### [Dataset matrículas - Universe RoboFlow](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
 
 
 
@@ -66,7 +68,7 @@ Es una plataforma integral diseñada para facilitar el desarrollo de aplicacione
 Tesseract OCR (Optical Character Recognition) es un motor de reconocimiento óptico de caracteres de código abierto desarrollado inicialmente por Hewlett-Packard. Este software permite convertir imágenes de texto impreso o manuscrito en texto digital editable. Es altamente configurable y soporta múltiples idiomas, lo que lo hace ideal para aplicaciones como la digitalización de documentos, el procesamiento de formularios, la extracción de datos de imágenes y la lectura automática de matrículas. Tesseract OCR es ampliamente utilizado en proyectos de digitalización de archivos históricos, aplicaciones móviles de escaneo de texto y sistemas de automatización de datos.
 
 
-Para utilizar este OCR se debe insatalar un archivo en la computadora y tambien la librería **pytesseract** para conectarse con el a travez de python.
+Para utilizar este OCR se debe insatalar un archivo en la computadora y tambien la librería **pytesseract** para conectarse con el a través de python.
 [Tesseract-OCR-5.3.4.20240503-64bits](https://drive.google.com/file/d/14vVHnb6rZg3xkgkEJf9m3_0SKiwkY_gd/view?usp=sharing)
 
 
@@ -118,7 +120,7 @@ Se transforma la imagen a escala de grises para facilitar la detección del OCR
 Se imprime la deteccion del OCR en el frame, que en conjunto con las demas etiquetas muestran el frame final.
 
 <p align="center">
-<img src="images/det_doble_v2.png"  height=300>
+<img src="images/det_doble_v2"  height=300>
 </p>
 
 La iteración de este proceso genera el análisis de un video o también podría ser el análisis  una cámara en tiempo real.
