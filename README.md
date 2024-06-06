@@ -120,7 +120,7 @@ Se transforma la imagen a escala de grises para facilitar la detección del OCR
 Se imprime la deteccion del OCR en el frame, que en conjunto con las demas etiquetas muestran el frame final.
 
 <p align="center">
-<img src="images/det_doble_v2"  height=300>
+<img src="images/det_doble_v2.png"  height=300>
 </p>
 
 La iteración de este proceso genera el análisis de un video o también podría ser el análisis  una cámara en tiempo real.
