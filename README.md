@@ -5,7 +5,7 @@ En construccion 🚧
 
 # Índice
 
-* [Proyecto](#Proyecto)
+* [Objetivo](#Objetivo)
 * [Tegnologías Utilizadas](#Tegnologías-Utilizadas)
   * [YOLO10](#YOLO10)
   * [OpenCV](#OpenCV)
@@ -16,12 +16,11 @@ En construccion 🚧
 * [Recomendaciones](#Recomendaciones)
 * [Autor](#Autor)
 
-# Proyecto
+# Objetivo
 
-El proyecto busca detectar el código de matrícula de vehículos de transpote terrestres, autos, motocicletas, buses y camiones. Para este fin se código se ayuda de la deteccion del vehículo y de la matricula.
+El proyecto busca detectar el código de matrícula de vehículos de transpote terrestres, autos, motocicletas, buses y camiones. Para este fin el código utilizará la detección  de vehículos y  luego de la matricula con YOLO10.
 
-Cabe aclarar que cuando se hacer referencia a placa,patente o matricula se está hablando de código de identificación vehicular.
-
+Cabe aclarar que cuando se hacer referencia a placa, patente o matrícula se está hablando de código de identificación vehicular.
 
 
 <br>[Volver al Índice](#Índice)
@@ -30,11 +29,10 @@ Cabe aclarar que cuando se hacer referencia a placa,patente o matricula se está
 
 ## [Yolo10](https://docs.ultralytics.com/models/yolov10/)
 
-
+YOLO (You Only Look Once) de Ultralytics es una arquitectura de red neuronal profunda diseñada para la detección de objetos en tiempo real. Utiliza un enfoque de regresión único que predice directamente las clases y las ubicaciones de los objetos en una imagen en una sola pasada, lo que lo hace extremadamente rápido y eficiente. Se usa en diversas aplicaciones como vigilancia, conducción autónoma, análisis de videos y cualquier tarea que requiera identificar y localizar objetos específicos dentro de imágenes o secuencias de video de manera rápida y precisa.
 
 
 ### Instalación YOLO10
-
 En poco tiempo se intalará de manera automática al instalar la librería ultralytics.
 
 En mi caso tuve que instalarlo de la siguente manera:
@@ -50,16 +48,26 @@ pip install .
 
 ## [OpenCV](https://docs.opencv.org/4.x/)
 
+OpenCV (Open Source Computer Vision Library) es una biblioteca de software de código abierto especializada en visión por computadora y aprendizaje automático. Desarrollada inicialmente por Intel, está escrita en C++ pero también tiene interfaces para Python y Java, entre otros lenguajes. OpenCV ofrece una amplia gama de herramientas y funciones para la captura, procesamiento y análisis de imágenes y videos. Se utiliza en aplicaciones como el reconocimiento facial, la detección de objetos, la segmentación de imágenes, el seguimiento de movimientos, la reconstrucción 3D y muchas otras tareas en los campos de la visión por computadora y la inteligencia artificial. Su capacidad para manejar tareas complejas de procesamiento de imágenes de manera eficiente la convierte en una herramienta valiosa para investigadores y desarrolladores en estas áreas.
 
 
-## [RoboFlow - Universe](https://universe.roboflow.com/)
+## [RoboFlow](https://universe.roboflow.com/)
 
+Es una plataforma integral diseñada para facilitar el desarrollo de aplicaciones de visión por computadora. Proporciona herramientas para gestionar y mejorar datasets de imágenes, incluyendo la anotación, el aumento de datos y la exportación a formatos compatibles con diversas arquitecturas de modelos de aprendizaje profundo, como YOLO, TensorFlow, y PyTorch. Roboflow simplifica el proceso de preparar los datos para entrenar modelos de reconocimiento de objetos, clasificación de imágenes y segmentación, permitiendo a los desarrolladores centrarse en el diseño y optimización de sus modelos en lugar de en las tareas repetitivas y técnicas asociadas con la gestión de datos.
 
-### [Dataset usado para las matrículas](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
+### [Dataset matrículas directo para descargar](https://drive.google.com/file/d/14F8udJ3bpF8evlwJESyYtV7JOL2QB51C/view?usp=sharing)
+
+### [Dataset matrículas - Universe RoboFlow](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
 
 
 
 ## [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+
+Tesseract OCR (Optical Character Recognition) es un motor de reconocimiento óptico de caracteres de código abierto desarrollado inicialmente por Hewlett-Packard. Este software permite convertir imágenes de texto impreso o manuscrito en texto digital editable. Es altamente configurable y soporta múltiples idiomas, lo que lo hace ideal para aplicaciones como la digitalización de documentos, el procesamiento de formularios, la extracción de datos de imágenes y la lectura automática de matrículas. Tesseract OCR es ampliamente utilizado en proyectos de digitalización de archivos históricos, aplicaciones móviles de escaneo de texto y sistemas de automatización de datos.
+
+
+Para utilizar este OCR se debe insatalar un archivo en la computadora y tambien la librería **pytesseract** para conectarse con el a travez de python.
+[Tesseract-OCR-5.3.4.20240503-64bits](https://drive.google.com/file/d/14vVHnb6rZg3xkgkEJf9m3_0SKiwkY_gd/view?usp=sharing)
 
 
 <br>[Volver al Índice](#Índice)
@@ -82,7 +90,7 @@ Se corre modelo entrenado con el dataset de coco en YOLO, para detectar si hay u
 <img src="images/det_auto.png"  height=300>
 </p>
 
-Al detectar algún vehiculo se procede a cortar el box de la detección para mejorar la deteccion de la placa, aunque no es necesario.
+Al detectar algún vehiculo se procede a cortar el box de la detección para mejorar la deteccion de la placa, aunque no es necesario, mejora la detección de la matrícula.
 
 <p align="center">
 <img src="images/rec_auto.png"  height=300>
@@ -110,7 +118,7 @@ Se transforma la imagen a escala de grises para facilitar la detección del OCR
 Se imprime la deteccion del OCR en el frame, que en conjunto con las demas etiquetas muestran el frame final.
 
 <p align="center">
-<img src="images/det_doble.png"  height=300>
+<img src="images/det_doble_v2.png"  height=300>
 </p>
 
 La iteración de este proceso genera el análisis de un video o también podría ser el análisis  una cámara en tiempo real.
@@ -136,11 +144,11 @@ La iteración de este proceso genera el análisis de un video o también podría
 
 # Recomendaciones
 
-- Es más apropiado usar modelos entrenados con datasets de imágenes prácticas, que se aproximen a las que se usarán en la detección. 
+- Es más apropiado usar modelos entrenados con datasets de imágenes prácticas, que se aproximen a las que se usarán en la detección. Esto mejora en gran medida la detección. 
 
-- Al analizar videos largos y continuos con varios vehiculos es necesario utilizar un tracker en el código.
+- Al analizar videos largos y con detecciones continuas de varios vehiculos es necesario utilizar un tracker en el código.
 
-- Se pueder mejorar el tratamiento que se le hace a la imagen de la placa, esto haría mas fiable la lectura que hace tesseract-OCR.
+- Se puede mejorar el tratamiento previo de la imagen, antes de usar el OCR , esto mejoraría la lectura que hace tesseract-OCR.
 
 
 <br>[Volver al Índice](#Índice)
