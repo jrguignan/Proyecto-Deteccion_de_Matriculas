@@ -7,7 +7,7 @@ En construccion 🚧
 
 * [Objetivo](#Objetivo)
 * [Tegnologías Utilizadas](#Tegnologías-Utilizadas)
-  * [YOLOv10](#YOLO10)
+  * [YOLOv10](#YOLOv10)
   * [OpenCV](#OpenCV)
   * [RoboFlow](#RoboFlow)
   * [Tesseract OCR](#Tesseract-OCR)
@@ -27,17 +27,17 @@ Cabe aclarar que cuando se hacer referencia a placa, patente o matrícula se est
 
 # Tegnologías Utilizadas
 
-## [Yolov10](https://docs.ultralytics.com/models/yolov10/)
+## [YOLOv10](https://docs.ultralytics.com/models/yolov10/)
 
 YOLO (You Only Look Once) de Ultralytics es una arquitectura de red neuronal profunda diseñada para la detección de objetos en tiempo real. Utiliza un enfoque de regresión único que predice directamente las clases y las ubicaciones de los objetos en una imagen en una sola pasada, lo que lo hace extremadamente rápido y eficiente. Se usa en diversas aplicaciones como vigilancia, conducción autónoma, análisis de videos y cualquier tarea que requiera identificar y localizar objetos específicos dentro de imágenes o secuencias de video de manera rápida y precisa.
 
 
 ### Instalación YOLO10
-En el momento de la realización del proyecto, recién había salido YOLOv10, por lo que tuve que instalarlo desde el repositorio de GitHub.
+En el momento de la realización del proyecto, recién había salido YOLOv10, por lo que tuvo que instalar desde el repositorio de GitHub.
 
 En poco tiempo se intalará de manera automática al instalar la librería ultralytics.
 
-En mi caso tuve que instalarlo de la siguente manera:
+Se instaló de la siguente manera:
 
 ```python
 # Dentro de la carpeta del proyecto, corre lo siguente en la terminal.
@@ -61,6 +61,7 @@ Es una plataforma integral diseñada para facilitar el desarrollo de aplicacione
 
 #### [Dataset matrículas - Universe RoboFlow](https://universe.roboflow.com/put-poznan-6aps1/car_detect-chuwy)
 
+El entrenamiento del dataset de matrículas se realizo en YOLOv8 devido a que al descargar de RoboFlow aún no se puede descargar en formato YOLOv10. De igual manera funcionó bien al correr en YOLOv10.
 
 
 ## [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
@@ -129,7 +130,7 @@ La iteración de este proceso genera el análisis de un video o también podría
 
 # Estructura de Archivos
 
-**carpeta models** -> Contiene los modelos entrenados en archivos .pt. Estos archivos son los valores de los peso y los bias de la red neuronal entrenada. Uno es el entreando por defecto con el dataset COCO y el otro es un modelo entrenado con un dataset sacado de RoboFlow  <br>
+**carpeta models** -> Contiene los modelos entrenados en archivos .pt. Estos archivos son los valores de los peso y los bias de la red neuronal entrenada. Uno es el entreando por defecto con el dataset COCO y el otro es un modelo entrenado con un dataset sacado de RoboFlow.  <br>
 
 **carpeta videos** -> Contiene un video que se utilizó de prueba y el video de salida luego de la detección de la matrícula.<br>
 
@@ -137,7 +138,7 @@ La iteración de este proceso genera el análisis de un video o también podría
 
 **detector.py** -> Contiene el código para correr sobre un video. <br>
 
-**entrenamiento_colab.ipynb** -> Contiene el entrenamiento del dataset para detectar la matrículas a 40 épocas, en la plataforma de Google Colab.<br>
+**entrenamiento_colab.ipynb** -> Contiene el entrenamiento del dataset para detectar la matrículas a 40 épocas, se realizó en la plataforma de Google Colab, por ser más potente que la computadora donde se desarolló el proyecto.<br>
 
 **requirements.txt** -> Archivo de texto que contiene las librerías utilizadas con sus versiones, en el caso de ultralytics (YOLO10), se instaló directo del reposiorio de GitHub porque ha la fecha de realización de este proyecto, tenía pocos días de su salida. <br>
 
