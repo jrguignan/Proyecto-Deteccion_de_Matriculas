@@ -31,7 +31,7 @@ Cabe aclarar que cuando se hacer referencia a placa, patente o matrícula se est
 
 YOLO (You Only Look Once) de Ultralytics es una arquitectura de red neuronal profunda diseñada para la detección de objetos en tiempo real. Utiliza un enfoque de regresión único que predice directamente las clases y las ubicaciones de los objetos en una imagen en una sola pasada, lo que lo hace extremadamente rápido y eficiente. Se usa en diversas aplicaciones como vigilancia, conducción autónoma, análisis de videos y cualquier tarea que requiera identificar y localizar objetos específicos dentro de imágenes o secuencias de video de manera rápida y precisa.
 
-En nuestro caso se uso la versión nano de YOLO. Para el caso de la detección de los vehículos se utilizó el dataset preentrenado con COCO y para el caso de la detección de la matrícula se usó un dataset de RoboFlow, este se entrenó en YOLOv8 y se pudo correr sin problemas en YOLOv10, debido a que la página de RoboFlow-Universe no se a actualizado a YOLOv10.
+Para este proyecto se uso la versión nano de YOLO. Para el caso de la detección de los vehículos se utilizó el dataset preentrenado con COCO y para el caso de la detección de la matrícula se usó un dataset de RoboFlow, este se entrenó en YOLOv8 y se pudo correr sin problemas en YOLOv10, debido a que la página de RoboFlow no se ha actualizado a YOLOv10.
 
 ### Instalación YOLO10
 En el momento de la realización del proyecto, recién había salido YOLOv10, por lo que tuvo que instalar desde el repositorio de GitHub.
