@@ -1,4 +1,3 @@
-En construccion 🚧
 <p align="center">
 <img src="images/banner-2.png"  height=350>
 </p>
